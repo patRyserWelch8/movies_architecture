@@ -1,0 +1,52 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Generated schema for Root",
+  "type": "object",
+  "properties": {
+    "BigForest_list": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "Title": {
+            "type": "string"
+          },
+          "Year": {
+            "type": "number"
+          },
+          "Category": {
+            "type": "string"
+          },
+          "Rental": {
+            "type": "number"
+          },
+          "Purchase": {
+            "type": "number"
+          },
+          "Stars": {
+            "type": "number"
+          },
+          "Classification": {
+            "type": "string"
+          },
+          "Country": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "Title",
+          "Year",
+          "Category",
+          "Rental",
+          "Purchase",
+          "Stars",
+          "Classification",
+          "Country"
+        ]
+      }
+    }
+  },
+  "required": [
+    "BigForest_list"
+  ]
+}

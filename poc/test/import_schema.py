@@ -1,18 +1,31 @@
-import json
-
-import store.odufilx
+import streamers.odufilx
+from streamers.bigforest import BigForest
 
 print("___upload schema__")
 oduflix_schema_path = "..//data//ODUFlix//schema.json"
+oduflix_entry_schema_path = "..//data//ODUFlix//schema_entry.json"
+
+bf_schema_path = "..//data//BigForest//schema.json"
+bf_entry_schema_path = "..//data//BigForest//schema_entry.json"
 
 print(oduflix_schema_path)
 
-oduflix_movies: store.odufilx.OduFlixStore = store.odufilx.OduFlixStore(oduflix_schema_path, None)
-print(oduflix_movies.print_content())
-oduflix_movies.upload_schema()
+oduflix_movies: streamers.odufilx.OduFlixStore = streamers.odufilx.OduFlixStore(oduflix_schema_path,
+                                                                                oduflix_entry_schema_path,
+                                                                                None)
+oduflix_movies.upload_metadata()
 print(oduflix_movies.schema)
-print(type(oduflix_movies.schema))
-entry_schema = oduflix_movies.schema["properties"]["oduflix_catalogue"]["items"]["properties"]
-print(entry_schema)
-print(json.dumps(entry_schema,indent = 2))
+print(oduflix_movies.entry_schema)
+
+
+bf_movies: BigForest = BigForest(bf_schema_path,
+                                 bf_entry_schema_path,
+                                 None)
+bf_movies.upload_metadata()
+print(bf_movies.schema)
+print(bf_movies.entry_schema)
+
+# 15/02/2024 all good
+
+
 

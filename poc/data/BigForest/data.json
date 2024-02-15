@@ -1,0 +1,44 @@
+{
+    "BigForest_list": [
+        {
+            "Title": "The Blair Witch Project",
+            "Year": 1993,
+            "Category": "Horror",
+            "Rental": 0.0,
+            "Purchase": 0.0,
+            "Stars": 5,
+            "Classification": "12A",
+            "Country": "USA"
+        },
+        {
+            "Title": "Barbie",
+            "Year": 2023,
+            "Category": "Comedy",
+            "Rental": 5.99,
+            "Purchase": 20.99,
+            "Stars": 5,
+            "Classification": "12A",
+            "Country": "USA"
+        },
+        {
+            "Title": "The Marvels",
+            "Year": 2023,
+            "Category": "SuperHero",
+            "Rental": 1.99,
+            "Purchase": 5.99,
+            "Stars": 2.0,
+            "Classification": "12A",
+            "Country": "FR"
+        },
+        {
+            "Title": "Diamonds never dies",
+            "Year": "1980",
+            "Category": "Spy movie",
+            "Rental": 0.0,
+            "Purchase": 0.0,
+            "Stars": 3,
+            "Classification": "15",
+            "Country": "GB"
+        }
+    ]
+}
