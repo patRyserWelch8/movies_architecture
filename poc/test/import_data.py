@@ -1,5 +1,5 @@
 import streamers.odufilx
-
+from data_management.data_store_csv import DataStoreCSV
 
 from streamers.bigforest import BigForest
 
@@ -11,6 +11,9 @@ oduflix_entry_schema = "..//data//ODUFlix//schema_entry.json"
 bf_schema_path = "..//data//BigForest//schema.json"
 bf_entry_schema_path = "..//data//BigForest//schema_entry.json"
 bf_data_path = "..//data//BigForest//data.json"
+
+cdd_schema_path = "/Users/patryser-welch/Documents/github/movies_architecture/poc/data/CCD/schema.csv"
+cdd_data_path = "/Users/patryser-welch/Documents/github/movies_architecture/poc/data/CCD/data.csv"
 
 
 oduflix_movies: streamers.odufilx.OduFlixStore = streamers.odufilx.OduFlixStore(oduflix_schema_path,
@@ -52,3 +55,9 @@ bf_movies.capture(entry_correct)
 bf_movies.insert()
 print(bf_movies.entries)
 
+print("IIIIII")
+
+ccd: DataStoreCSV = DataStoreCSV(cdd_schema_path, cdd_data_path)
+ccd.upload_metadata()
+ccd.upload_data()
+print(ccd.data)

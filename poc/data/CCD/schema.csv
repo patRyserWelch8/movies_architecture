@@ -1,0 +1,8 @@
+Column, Type
+Title, string
+TypeProgram, string
+Classification, string
+Country, string
+Year, integer
+Category, string
+Channel, string
