@@ -1,0 +1,40 @@
+{
+  "oduflix_catalogue" :[
+    {
+      "Title": "Jurassic Park",
+      "Producer": "Spielberg",
+      "Year":"1992",
+      "Classification":"Fantasy",
+      "Stars": 5,
+      "Actors":["Sam Neil", "Laura Dern", "Jeff G."],
+      "Country":"USA"
+    },
+    {
+      "Title": "Jurassic Park II",
+      "Producer": "Spielberg",
+      "Year":"1995",
+      "Classification":"Fantasy",
+      "Stars": 3,
+      "Actors":["Sam Neil", "Laura Dern", "Jeff G."],
+      "Country":"USA"
+    },
+    {
+      "Title": "Star Wars",
+      "Producer": "Matt Luca",
+      "Year":"1979",
+      "Classification":"Science Fiction",
+      "Stars": 5,
+      "Actors":["Princess Lea","Darth Vader", "Arthur McGuiness"],
+      "Country":"USA"
+    },
+    {
+      "Title": "Love Acturally",
+      "Producer": "English Producer",
+      "Year":"2000",
+      "Classification":"Comedy",
+      "Stars": 4,
+      "Actors":["Hugh Grant"],
+      "Country":"UK"
+    }
+  ]
+}

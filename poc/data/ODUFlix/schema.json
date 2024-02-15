@@ -1,36 +1,51 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "title": "ODUFlix Movies for testing JSON format",
+  "title": "Generated schema for Root",
   "type": "object",
   "properties": {
-    "Name ": {
-      "type": "string"
-    },
-    "Producer": {
-      "type": "string"
-    },
-    "Year": {
-      "type": "number"
-    },
-    "Classification": {
-      "type": "string"
-    },
-    "Stars": {
-      "type": "number"
-    },
-    "Actors": {
+    "oduflix_catalogue": {
       "type": "array",
       "items": {
-        "type": "string"
+        "type": "object",
+        "properties": {
+          "Title": {
+            "type": "string"
+          },
+          "Producer": {
+            "type": "string"
+          },
+          "Year": {
+            "type": "string"
+          },
+          "Classification": {
+            "type": "string"
+          },
+          "Stars": {
+            "type": "number"
+          },
+          "Actors": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "Country": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "Title",
+          "Producer",
+          "Year",
+          "Classification",
+          "Stars",
+          "Actors",
+          "Country"
+        ]
       }
     }
   },
   "required": [
-    "Name ",
-    "Producer",
-    "Year",
-    "Classification",
-    "Stars",
-    "Actors"
+    "oduflix_catalogue"
   ]
 }
