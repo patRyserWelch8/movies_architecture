@@ -61,17 +61,11 @@ print("IIIIII")
 ccd: CompactCatDay = CompactCatDay(cdd_schema_path, cdd_data_path)
 print(cdd_data_path)
 ccd.upload_metadata()
+print("-----------------")
 ccd.upload_data()
 print(ccd.data)
 
-
-entry_correct = {'Title': "News at 10",
-                 "TypeProgram": "News",
-                 "Classification": "12",
-                 "Country": "GB",
-                 "Year":2024,
-                 "Category": "News",
-                 "Channel":"BBC One"}
+entry_correct = ["News at 10", "News", "12", "GB", 2024, "News", "BBC One"]
 
 ccd.capture(entry_correct)
 ccd.insert()

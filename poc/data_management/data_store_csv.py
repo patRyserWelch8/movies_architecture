@@ -17,22 +17,25 @@ class DataStoreCSV(DataStore):
         self.schema = pd.read_csv(self.schema_path)
 
     def upload_data(self) -> None:
-        self.data = pd.read_csv(self.data_path)
+        dtypes = pd.read_csv('tmp.csv', nrows=1).iloc[0].to_dict()
+        print(dtypes)
+        self.data = pd.read_csv(self.data_path, dtype = dtypes)
+
 
     def print_schema(self):
         print(self.schema)
 
-    def capture(self, entry:dict) -> None:
-        self.entry = pd.DataFrame(entry,
-                                  columns = self.data.columns,
-                                  index=[len(self.data)])
-        print(self.entry)
+    def capture(self, entry:list) -> None:
+        columns = list(self.schema.Column)
+        self.entry = pd.DataFrame(columns=columns)
+        col_indices = range(0, len(columns))
+        for col in col_indices:
+            self.entry.loc[0, columns[col]] = entry[col]
 
     def insert(self) -> None:
-        if self.validate_data():
-            self.data = pd.concat([self.data, self.entry], axis=0)
-            #self.data.to_csv(self.data_path, index=False)
-            print(self.data.columns)
+        self.data = pd.concat([self.data, self.entry], ignore_index=True)
+        self.data.to_csv(self.data_path, index = False )
+
     def validate_data(self) -> bool:
         list_col = set(self.schema.Column)
         keys     = set(self.entry.columns)
