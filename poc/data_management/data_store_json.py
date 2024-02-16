@@ -44,25 +44,34 @@ class DataStoreJSON(DataStore):
 
 
     def capture(self, entry: str) -> None:
-        self.entry_json = json.loads(entry)
+        super().capture(entry)
+        self.entry_json    = json.loads(entry)
+
 
     def _validate_data(self) -> bool:
-        print(self.entry_schema)
+
         try:
             validate(instance=self.entry_json, schema=self.entry_schema)
         except jsonschema.exceptions.ValidationError as err:
+            print(err)
             return False
         return True
 
     def insert(self) -> None:
-        if self._validate_data:
+        no_entries_before = len(self.entries)
+        no_entries_after  = len(self.entries)
+        if self._validate_data():
             self.entries.append(self.entry_json)
+            no_entries_after = len(self.entries)
             self.data[self.root] = self.entries
             with open(self.data_path, 'w', encoding='utf-8') as storage:
                 json.dump(self.data, storage, ensure_ascii=False, indent=4)
 
+        self.status_insert = (no_entries_after > no_entries_before)
 
-
+    def confirm_insert_message(self) -> None:
+        super().confirm_insert_message()
+        print(self.entry_json)
 
     def print_schema(self):
         print(json.dumps(self.schema, indent=2))

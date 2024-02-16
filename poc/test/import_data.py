@@ -55,6 +55,7 @@ entry_correct : str = '{ "Title": "Diamonds never dies", "Year":"1980", "Categor
 bf_movies.capture(entry_correct)
 bf_movies.insert()
 print(bf_movies.entries)
+print(bf_movies.confirm_insert_message())
 
 print("IIIIII")
 

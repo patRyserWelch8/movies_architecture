@@ -18,14 +18,13 @@ class DataStoreCSV(DataStore):
 
     def upload_data(self) -> None:
         dtypes = pd.read_csv('tmp.csv', nrows=1).iloc[0].to_dict()
-        print(dtypes)
         self.data = pd.read_csv(self.data_path, dtype = dtypes)
-
 
     def print_schema(self):
         print(self.schema)
 
     def capture(self, entry:list) -> None:
+        super().capture(None)
         columns = list(self.schema.Column)
         self.entry = pd.DataFrame(columns=columns)
         col_indices = range(0, len(columns))
@@ -33,11 +32,20 @@ class DataStoreCSV(DataStore):
             self.entry.loc[0, columns[col]] = entry[col]
 
     def insert(self) -> None:
-        self.data = pd.concat([self.data, self.entry], ignore_index=True)
-        self.data.to_csv(self.data_path, index = False )
+        before = self.data.shape[0]
+        after  = self.data.shape[0]
+        if self.validate_data():
+            self.data = pd.concat([self.data, self.entry], ignore_index=True)
+            self.data.to_csv(self.data_path, index = False )
+            after = self.data.shape[0]
+        self.status_insert = (after > before)
 
     def validate_data(self) -> bool:
         list_col = set(self.schema.Column)
         keys     = set(self.entry.columns)
         return (keys == list_col) & \
                (self.data.shape[1] == self.entry.shape[1])
+
+    def confirm_insert_message(self) -> None:
+        super().confirm_insert_message()
+        print(self.entry)

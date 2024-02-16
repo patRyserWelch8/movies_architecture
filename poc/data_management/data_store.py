@@ -3,10 +3,9 @@ import os
 
 class DataStore(object):
     def __init__(self):
-        self.schema = None
-        self.data = None
-
-
+        self.schema        = None
+        self.data          = None
+        self.status_insert = False
 
 
     def upload_data(self) -> None:
@@ -28,4 +27,10 @@ class DataStore(object):
         pass
 
     def capture(self, entry: str) -> None:
-        pass
+        self.status_insert = False
+
+    def confirm_insert_message(self) -> None:
+        if self.status_insert:
+            print("success! ")
+        else:
+            print("not successful yet!")
