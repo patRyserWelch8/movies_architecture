@@ -2,6 +2,7 @@ import streamers.odufilx
 from data_management.data_store_csv import DataStoreCSV
 
 from streamers.bigforest import BigForest
+from streamers.ccd import CompactCatDay
 
 print("___upload data_")
 oduflix_schema_path = "..//data//ODUFlix//schema.json"
@@ -57,7 +58,21 @@ print(bf_movies.entries)
 
 print("IIIIII")
 
-ccd: DataStoreCSV = DataStoreCSV(cdd_schema_path, cdd_data_path)
+ccd: CompactCatDay = CompactCatDay(cdd_schema_path, cdd_data_path)
+print(cdd_data_path)
 ccd.upload_metadata()
 ccd.upload_data()
 print(ccd.data)
+
+
+entry_correct = {'Title': "News at 10",
+                 "TypeProgram": "News",
+                 "Classification": "12",
+                 "Country": "GB",
+                 "Year":2024,
+                 "Category": "News",
+                 "Channel":"BBC One"}
+
+ccd.capture(entry_correct)
+ccd.insert()
+ccd.print_data()

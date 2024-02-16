@@ -27,4 +27,5 @@ class DataStore(object):
     def print_data(self):
         pass
 
-
+    def capture(self, entry: str) -> None:
+        pass

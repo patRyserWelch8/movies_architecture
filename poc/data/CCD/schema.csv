@@ -3,6 +3,6 @@ Title, string
 TypeProgram, string
 Classification, string
 Country, string
-Year, integer
+Year, int
 Category, string
 Channel, string
