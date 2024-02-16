@@ -1546,6 +1546,42 @@
                 "Jeff G."
             ],
             "Country": "USA"
+        },
+        {
+            "Title": "Jurassic Park III",
+            "Producer": "Spielberg",
+            "Year": "1998",
+            "Classification": "Fantasy",
+            "Stars": 4,
+            "Actors": [
+                "Sam Neil",
+                "Jeff G."
+            ],
+            "Country": "USA"
+        },
+        {
+            "Title": "Jurassic Park III",
+            "Producer": "Spielberg",
+            "Year": "1998",
+            "Classification": "Fantasy",
+            "Stars": 4,
+            "Actors": [
+                "Sam Neil",
+                "Jeff G."
+            ],
+            "Country": "USA"
+        },
+        {
+            "Title": "Jurassic Park III",
+            "Producer": "Spielberg",
+            "Year": "1998",
+            "Classification": "Fantasy",
+            "Stars": 4,
+            "Actors": [
+                "Sam Neil",
+                "Jeff G."
+            ],
+            "Country": "USA"
         }
     ]
 }

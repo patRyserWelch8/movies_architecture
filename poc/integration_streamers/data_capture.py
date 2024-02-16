@@ -4,12 +4,12 @@ from streamers.ccd import CompactCatDay
 from streamers.odufilx import OduFlixStore
 
 
-class DataCapture:
+class Streamers:
     """"
     " Those values will guide the call to direct the stream
     " data to the most appropriate streamer
     """
-    CCD = 0
+    CCD: int = 0
     ODUFLIX = 1
     BIGFOREST = 2
 

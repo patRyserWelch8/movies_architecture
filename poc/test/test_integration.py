@@ -1,7 +1,7 @@
-from integration_streamers.data_capture import DataCapture
+from integration_streamers.data_capture import Streamers
 
 
-backend : DataCapture = DataCapture()
+backend : Streamers = Streamers()
 
 entry_correct : str = '{ "Title": "Jurassic Park III", "Producer": "Spielberg", "Year":"1998", "Classification":"Fantasy", "Stars": 4, "Actors":["Sam Neil", "Jeff G."], "Country":"USA"}'
 backend.insert_new_stream(entry_correct, backend.ODUFLIX)

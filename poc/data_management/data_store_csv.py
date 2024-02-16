@@ -17,8 +17,7 @@ class DataStoreCSV(DataStore):
         self.schema = pd.read_csv(self.schema_path)
 
     def upload_data(self) -> None:
-        dtypes = pd.read_csv('tmp.csv', nrows=1).iloc[0].to_dict()
-        self.data = pd.read_csv(self.data_path, dtype = dtypes)
+        self.data = pd.read_csv(self.data_path)
 
     def print_schema(self):
         print(self.schema)
