@@ -20,6 +20,11 @@ class IntegrationFrontBack():
         elif self.cli.typeOfStream == Streamers.ODUFLIX:
             data : str   = self._transform_oduflix
             self.streamers.insert_new_stream(data, Streamers.ODUFLIX)
+        elif self.cli.typeOfStream == Streamers.BIGFOREST:
+            data : str = self._transform_bigforest
+            self.streamers.insert_new_stream(data,Streamers.BIGFOREST)
+
+
     @property
     def _transform_ccd(self) -> str:
         # Title, TypeProgram, Classification, Country, Year,
@@ -50,3 +55,22 @@ class IntegrationFrontBack():
         values_str : str  = json.dumps(values)
         print(values_str)
         return values_str
+
+    @property
+    def _transform_bigforest(self) -> str:
+        # Title, Year, Category, Rental, Purchase, Stars
+        # Classification,  Country
+
+        values: dict = {}
+        values.update({"Title": self.cli.bigforest_ui.title})
+        values.update({"Year": self.cli.bigforest_ui.year})
+        values.update({"Category": self.cli.bigforest_ui.category})
+        values.update({"Rental": self.cli.bigforest_ui.rental})
+        values.update({"Purchase": self.cli.bigforest_ui.purchase})
+        values.update({"Stars": self.cli.bigforest_ui.stars})
+        values.update({"Classification": self.cli.bigforest_ui.classifcation})
+        values.update({"Country": self.cli.bigforest_ui.country})
+        values_str: str = json.dumps(values)
+        print(values_str)
+        return values_str
+
