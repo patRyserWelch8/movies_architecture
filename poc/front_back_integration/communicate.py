@@ -9,11 +9,11 @@ class IntegrationFrontBack():
     def __init__(self):
         self.streamers: Streamers = Streamers()
         self.cli: InteractionGeneral = InteractionGeneral()
+        self.remote : In
 
 
     def capture_and_insert(self):
         self.cli.input_flow()
-        print("************")
         if self.cli.typeOfStream == Streamers.CCD:
             data : str      = self._transform_ccd
             self.streamers.insert_new_stream(data, Streamers.CCD)
