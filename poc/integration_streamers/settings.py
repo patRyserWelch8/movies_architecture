@@ -9,3 +9,7 @@ bf_data_path = "//Users//patryser-welch//Documents//github//movies_architecture/
 
 ccd_schema_path = "/Users/patryser-welch/Documents/github/movies_architecture/poc/data/CCD/schema.csv"
 ccd_data_path = "/Users/patryser-welch/Documents/github/movies_architecture/poc/data/CCD/data.csv"
+
+peartv_schema_path = "/Users/patryser-welch/Documents/github/movies_architecture/poc/data/PearTV/ddl.sql"
+peartv_data_path = "/Users/patryser-welch/Documents/github/movies_architecture/poc/data/PearTV/movies.db"
+
