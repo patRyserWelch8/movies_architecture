@@ -1,3 +1,5 @@
+import os.path
+
 from remote_interaction.integration_ccd import IntegrationCCD
 import settings
 import pandas as pd
@@ -13,8 +15,13 @@ class IngestionMovies(object):
     def __init__(self):
         self.typeOfStream: int = -1
 
-    def ingest_ccd(self, file:) -> pd.DataFrame:
-        return pd.read_csv(settings.ccd_data_path)
+    def ingest_ccd(self) -> pd.DataFrame:
+        if os.path.isfile(settings.ccd_data_path):
+            return pd.read_csv(settings.ccd_data_path)
+        else:
+            return pd.DataFrame()
+
+
 
 
 
