@@ -10,24 +10,35 @@ class MoviesRemoteDate(object):
     ODUFLIX = 1
     BIGFOREST = 2
 
+
     def __init__(self):
         pass
 
-    def ingest_ccd(self) -> pd.DataFrame:
+    @staticmethod
+    def ingest_ccd() -> pd.DataFrame:
         if os.path.isfile(settings.ccd_data_path):
             return pd.read_csv(settings.ccd_data_path)
         else:
             return pd.DataFrame()
 
-    def ingest_oduflix(self) -> pd.DataFrame:
+    @staticmethod
+    def ingest_oduflix() -> pd.DataFrame:
         if os.path.isfile(settings.oduflix_data_path):
             return pd.read_csv(settings.oduflix_data_path)
         else:
             return pd.DataFrame()
 
-    def ingest_bigforest(self) -> pd.DataFrame:
+    @staticmethod
+    def ingest_bigforest() -> pd.DataFrame:
         if os.path.isfile(settings.bf_data_path):
             return pd.read_csv(settings.bf_data_path)
+        else:
+            return pd.DataFrame()
+
+    @staticmethod
+    def ingest_peartv():
+        if os.path.isfile(settings.peartv_data_path):
+            return pd.read_csv(settings.peartv_data_path)
         else:
             return pd.DataFrame()
 

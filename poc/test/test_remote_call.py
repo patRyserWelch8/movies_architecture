@@ -5,3 +5,5 @@ DreamStream: IntegrationFrontBack = IntegrationFrontBack()
 
 
 DreamStream.capture_and_insert_remote_data(Streamers.BIGFOREST)
+
+DreamStream.capture_and_insert_remote_data(Streamers.PEARTV)

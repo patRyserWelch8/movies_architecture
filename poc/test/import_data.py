@@ -71,6 +71,7 @@ entry_correct = ["News at 10", "News", "12", "GB", 2024, "News", "BBC One"]
 
 ccd.capture(entry_correct)
 ccd.insert()
+ccd.confirm_insert_message()
 ccd.print_data()
 
 print("___PearTV__")
@@ -81,8 +82,9 @@ pear.upload_metadata()
 pear.upload_data()
 pear.print_data()
 
-entry_correct = "6, 'The Simpsons Movie', '12', 'USA', 12.99, 19.99, 4"
+entry_correct = "7, 'The Simpsons Movie', '12', 'USA', 12.99, 19.99, 4, 2000"
 pear.capture(entry_correct)
 pear.insert()
+pear.confirm_insert_message()
 pear.upload_data()
 pear.print_data()

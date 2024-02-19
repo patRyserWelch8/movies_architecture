@@ -5,6 +5,7 @@ CREATE TABLE Film (
  country TEXT NOT NULL,
  rental FLOAT NOT NULL,
  purchase FLOAT NOT NULL,
- stars INT NOT NULL
+ stars INT NOT NULL,
+ year INT  NOT NULL
 );
 

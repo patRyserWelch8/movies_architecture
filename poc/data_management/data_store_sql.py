@@ -69,3 +69,10 @@ class DataStoreSQL(DataStore):
 
     def print_data(self):
         print(self.data)
+
+    def exectute (self, statement) -> list:
+        self._connect_to_db()
+        self.cursor.execute(statement)
+        records = self.cursor.fetchall()
+        self._disconnect_db()
+        return records
