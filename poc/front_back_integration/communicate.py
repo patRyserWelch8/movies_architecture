@@ -2,6 +2,8 @@ import json
 
 from integration_streamers.data_capture import Streamers
 from user_interaction.interaction import InteractionGeneral
+from remote_interaction.integration import MoviesRemoteDate
+import pandas as pd
 
 
 class IntegrationFrontBack():
@@ -9,10 +11,10 @@ class IntegrationFrontBack():
     def __init__(self):
         self.streamers: Streamers = Streamers()
         self.cli: InteractionGeneral = InteractionGeneral()
-        self.remote : In
+        self.remote_call : MoviesRemoteDate  = MoviesRemoteDate()
 
 
-    def capture_and_insert(self):
+    def capture_and_insert_users(self):
         self.cli.input_flow()
         if self.cli.typeOfStream == Streamers.CCD:
             data : str      = self._transform_ccd
@@ -21,7 +23,7 @@ class IntegrationFrontBack():
             data : str   = self._transform_oduflix
             self.streamers.insert_new_stream(data, Streamers.ODUFLIX)
         elif self.cli.typeOfStream == Streamers.BIGFOREST:
-            data : str = self._transform_bigforest
+            data : str = self._transform_bigforest_ui
             self.streamers.insert_new_stream(data,Streamers.BIGFOREST)
 
 
@@ -57,7 +59,7 @@ class IntegrationFrontBack():
         return values_str
 
     @property
-    def _transform_bigforest(self) -> str:
+    def _transform_bigforest_ui(self) -> str:
         # Title, Year, Category, Rental, Purchase, Stars
         # Classification,  Country
 
@@ -71,6 +73,31 @@ class IntegrationFrontBack():
         values.update({"Classification": self.cli.bigforest_ui.classifcation})
         values.update({"Country": self.cli.bigforest_ui.country})
         values_str: str = json.dumps(values)
-        print(values_str)
+        print(values)
         return values_str
+
+
+
+    def _transform_bigforest_remote(self, entry: pd.Series) -> str:
+        # Title, Year, Category, Rental, Purchase, Stars
+        # Classification,  Country
+
+        values: dict = entry.to_dict()
+        values_str: str = json.dumps(values)
+        print(values)
+        return values_str
+
+    def capture_and_insert_remote_data(self, streamer: int) -> None:
+        if streamer == Streamers.BIGFOREST:
+            self._ingest_bigforest()
+
+    def _ingest_bigforest(self):
+        bf_data : pd.DataFrame = self.remote_call.ingest_bigforest()
+        bf_data["Year"]  = bf_data["Year"].astype("Int64")
+        bf_data["Stars"] = bf_data["Stars"].astype("Int64")
+
+        for _, values in bf_data.iterrows():
+            entry: str = self._transform_bigforest_remote(values)
+            self.streamers.insert_new_stream(entry, Streamers.BIGFOREST)
+            print("Success Ingestion")
 

@@ -26,26 +26,18 @@ class DataStoreJSON(DataStore):
     @staticmethod
     def _retrieve_json(path: str) -> json:
         data_return: json = None
-        print(1)
         if os.path.isfile(str(path)):
-            print(2)
             with open(path) as file:
                 data : str = file.read()
             if data is not None:
                 data_return =  json.loads(data)
-        print("TTTTTT")
-        print(data_return)
         return data_return
 
 
 
     def upload_metadata(self) -> None:
         self.schema = self._retrieve_json(self.schema_path)
-        print("JJJJJJJ")
-        print(self.schema)
         self.entry_schema = self._retrieve_json(self.entry_schema_path)
-        print("UUUUUUU")
-        print(self.entry_schema)
 
 
     def upload_data(self) -> None:
@@ -61,8 +53,6 @@ class DataStoreJSON(DataStore):
 
 
     def _validate_data(self) -> bool:
-        print("UUUUUUU")
-        print(self.entry_schema)
         try:
             validate(instance=self.entry_json, schema=self.entry_schema)
         except jsonschema.exceptions.ValidationError as err:
