@@ -1,8 +1,8 @@
 from integration_streamers import settings
-from streamers.bigforest import BigForest
-from streamers.ccd import CompactCatDay
-from streamers.odufilx import OduFlixStore
-from streamers.peartv import PearTV
+from streamers_connection.bigforest import BigForest
+from streamers_connection.ccd import CompactCatDay
+from streamers_connection.odufilx import OduFlixStore
+from streamers_connection.peartv import PearTV
 
 
 class Streamers:

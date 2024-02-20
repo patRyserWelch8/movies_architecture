@@ -1,7 +1,7 @@
-import streamers.odufilx
+import streamers_connection.odufilx
 from data_management.data_store_csv import DataStoreCSV
 from data_management.data_store_sql import DataStoreSQL
-from streamers.bigforest import BigForest
+from streamers_connection.bigforest import BigForest
 
 print("___upload schema__")
 oduflix_schema_path = "..//data//ODUFlix//schema.json"
@@ -20,9 +20,9 @@ peartv_data_path = "/Users/patryser-welch/Documents/github/movies_architecture/p
 print("___oduflix__")
 print(oduflix_schema_path)
 
-oduflix_movies: streamers.odufilx.OduFlixStore = streamers.odufilx.OduFlixStore(oduflix_schema_path,
-                                                                                oduflix_entry_schema_path,
-                                                                                None)
+oduflix_movies: streamers_connection.odufilx.OduFlixStore = streamers_connection.odufilx.OduFlixStore(oduflix_schema_path,
+                                                                                                      oduflix_entry_schema_path,
+                                                                                                      None)
 oduflix_movies.upload_metadata()
 oduflix_movies.print_schema()
 

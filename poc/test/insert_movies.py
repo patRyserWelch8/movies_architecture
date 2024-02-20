@@ -1,4 +1,4 @@
-import streamers.odufilx
+import streamers_connection.odufilx
 
 print("___upload schema__")
 oduflix_schema_path = "..//data//ODUFlix//schema.json"
@@ -6,8 +6,8 @@ oduflix_data_path = "..//data//ODUFlix//data.json"
 
 print(oduflix_schema_path)
 
-oduflix_movies: streamers.odufilx.OduFlixStore = streamers.odufilx.OduFlixStore(oduflix_schema_path,
-                                                                                oduflix_data_path)
+oduflix_movies: streamers_connection.odufilx.OduFlixStore = streamers_connection.odufilx.OduFlixStore(oduflix_schema_path,
+                                                                                                      oduflix_data_path)
 print(oduflix_movies.print_content())
 
 oduflix_movies.upload_data()

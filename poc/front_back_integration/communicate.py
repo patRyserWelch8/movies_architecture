@@ -1,7 +1,7 @@
 import json
 
 from integration_streamers.data_capture import Streamers
-from streamers.peartv import PearTV
+from streamers_connection.peartv import PearTV
 from user_interaction.interaction import InteractionGeneral
 from remote_interaction.integration import MoviesRemoteDate
 import pandas as pd

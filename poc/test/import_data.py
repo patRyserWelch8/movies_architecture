@@ -1,9 +1,9 @@
-import streamers.odufilx
+import streamers_connection.odufilx
 from data_management.data_store_csv import DataStoreCSV
 
-from streamers.bigforest import BigForest
-from streamers.ccd import CompactCatDay
-from streamers.peartv import PearTV
+from streamers_connection.bigforest import BigForest
+from streamers_connection.ccd import CompactCatDay
+from streamers_connection.peartv import PearTV
 
 
 
@@ -23,9 +23,9 @@ peartv_schema_path = "/Users/patryser-welch/Documents/github/movies_architecture
 peartv_data_path = "/Users/patryser-welch/Documents/github/movies_architecture/poc/data/PearTV/movies.db"
 
 
-oduflix_movies: streamers.odufilx.OduFlixStore = streamers.odufilx.OduFlixStore(oduflix_schema_path,
-                                                                                oduflix_entry_schema,
-                                                                                oduflix_data_path)
+oduflix_movies: streamers_connection.odufilx.OduFlixStore = streamers_connection.odufilx.OduFlixStore(oduflix_schema_path,
+                                                                                                      oduflix_entry_schema,
+                                                                                                      oduflix_data_path)
 print("___upload data__")
 print("___oduflix__")
 oduflix_movies.upload_metadata()
