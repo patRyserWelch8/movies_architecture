@@ -6,7 +6,7 @@ import pandas as pd
 
 
 class DataStoreCSV(DataStore):
-    def __init__(self,schema_path: str, data_path: str):
+    def __init__(self, schema_path: str, data_path: str) -> object:
         super().__init__()
         self.schema_path: str           = schema_path
         self.data_path  : str           = data_path

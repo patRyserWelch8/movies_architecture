@@ -1,6 +1,8 @@
 import os
 
 import jsonschema
+import pandas as pd
+
 from data_management.data_store import DataStore
 import json
 from jsonschema import validate
@@ -16,8 +18,9 @@ class DataStoreJSON(DataStore):
         self.entry_schema: json = None
         self.entries : list = []
         self.root : str  = None
+        self.data_df : pd.DataFrame = None
 
-        # path to location of data
+        # path to location of primary_data
         self.entry_schema_path : str = entry_schema_path
         self.schema_path       : str = schema_path
         self.data_path         : str = data_path
@@ -26,43 +29,34 @@ class DataStoreJSON(DataStore):
     @staticmethod
     def _retrieve_json(path: str) -> json:
         data_return: json = None
-        print(1)
         if os.path.isfile(str(path)):
-            print(2)
             with open(path) as file:
                 data : str = file.read()
             if data is not None:
                 data_return =  json.loads(data)
-        print("TTTTTT")
-        print(data_return)
         return data_return
 
 
 
     def upload_metadata(self) -> None:
         self.schema = self._retrieve_json(self.schema_path)
-        print("JJJJJJJ")
-        print(self.schema)
         self.entry_schema = self._retrieve_json(self.entry_schema_path)
-        print("UUUUUUU")
-        print(self.entry_schema)
 
 
     def upload_data(self) -> None:
         self.data               = self._retrieve_json(self.data_path)
-        self.root               = list(self.data.keys())[0]
-        self.entries            = self.data[self.root]
-
-
+        if self.data.keys() is None:
+            self.root = None
+            self.entries = {}
+        else:
+            self.root = list(self.data.keys())[0]
+            self.entries = self.data[self.root]
 
     def capture(self, entry: str) -> None:
         super().capture(entry)
         self.entry_json    = json.loads(entry)
 
-
     def _validate_data(self) -> bool:
-        print("UUUUUUU")
-        print(self.entry_schema)
         try:
             validate(instance=self.entry_json, schema=self.entry_schema)
         except jsonschema.exceptions.ValidationError as err:
@@ -91,3 +85,10 @@ class DataStoreJSON(DataStore):
 
     def print_data(self):
         print(json.dumps(self.data, indent=2))
+
+    def upload_data_dataframe(self) -> None:
+        self.upload_data()
+        self.data_df = pd.DataFrame.from_dict(self.data[self.root])
+
+
+
