@@ -42,7 +42,7 @@ class StreamersETL:
                    self.bf_data,
                    self.ccd_data]
         self.secondary_data = pd.concat(sources, axis=0)
-        print(self.secondary_data.shape)
+        self.secondary_data.to_csv(settings.analytical_data_path, index = False)
 
     def _ingest_ccd(self) -> None:
         ccd: CompactCatDay = CompactCatDay(settings.ccd_schema_path,
@@ -78,7 +78,6 @@ class StreamersETL:
         self.ccd_data['Stars'] = np.repeat(0, self.ccd_data.shape[0])
         self.ccd_data['Rental'] = np.repeat(0.00, self.ccd_data.shape[0])
         self.ccd_data['Purchase'] = np.repeat(0.00, self.ccd_data.shape[0])
-
         self.ccd_data = self.ccd_data.drop(columns=['TypeProgram', 'Channel', 'Category'])
         self.ccd_data = self.ccd_data.reindex(columns=self.schema)
 
@@ -99,4 +98,5 @@ class StreamersETL:
         self.oduflix_data['Streamer'] = np.repeat('OduFlix', self.oduflix_data.shape[0])
         self.oduflix_data['Rental'] = np.repeat(0.00, self.oduflix_data.shape[0])
         self.oduflix_data['Purchase'] = np.repeat(0.00, self.oduflix_data.shape[0])
+        self.oduflix_data['Classification'] = np.repeat('Unknown', self.oduflix_data.shape[0])
         self.oduflix_data = self.oduflix_data.reindex(columns=self.schema)

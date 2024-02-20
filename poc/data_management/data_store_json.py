@@ -45,8 +45,6 @@ class DataStoreJSON(DataStore):
 
     def upload_data(self) -> None:
         self.data               = self._retrieve_json(self.data_path)
-        print(self.data_path)
-        print(self.data.keys())
         if self.data.keys() is None:
             self.root = None
             self.entries = {}

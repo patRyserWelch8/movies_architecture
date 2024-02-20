@@ -13,3 +13,4 @@ ccd_data_path = "/Users/patryser-welch/Documents/github/movies_architecture/poc/
 peartv_schema_path = "/Users/patryser-welch/Documents/github/movies_architecture/poc/primary_data/PearTV/ddl.sql"
 peartv_data_path = "/Users/patryser-welch/Documents/github/movies_architecture/poc/primary_data/PearTV/movies.db"
 
+analytical_data_path = "/Users/patryser-welch/Documents/github/movies_architecture/poc/secondary_data/streamersDataSet.csv"
