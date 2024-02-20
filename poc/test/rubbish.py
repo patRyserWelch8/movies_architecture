@@ -1,6 +1,6 @@
 import pandas as pd
 
-# Create Example data with types
+# Create Example primary_data with types
 df = pd.DataFrame({
     'words': ['foo', 'bar', 'spam', 'eggs'],
     'nums': [1, 2, 3, 4]

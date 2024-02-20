@@ -8,7 +8,7 @@ from streamers_connection.peartv import PearTV
 class Streamers:
     """"
     " Those values will guide the call to direct the stream
-    " data to the most appropriate streamer
+    " primary_data to the most appropriate streamer
     """
     CCD: int = 0
     ODUFLIX = 1
@@ -69,7 +69,7 @@ class Streamers:
         peartv : PearTV = PearTV(settings.peartv_data_path,
                                  settings.peartv_schema_path)
         peartv.upload_metadata()
-        # The data is stored in the sql db. So not need to upload it
+        # The primary_data is stored in the sql db. So not need to upload it
         peartv.capture(stream_data)
         peartv.insert()
         peartv.confirm_insert_message()

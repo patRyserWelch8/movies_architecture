@@ -1579,6 +1579,56 @@
             "Stars": 5,
             "Classification": "12A",
             "Country": "USA"
+        },
+        {
+            "Title": "Harry Potter and the Philosophy stone",
+            "Year": 2001,
+            "Category": "Fantasy",
+            "Rental": 2.99,
+            "Purchase": 5.99,
+            "Stars": 4,
+            "Classification": "PG",
+            "Country": "GB"
+        },
+        {
+            "Title": "Harry Potter and the goblet of fire",
+            "Year": 2005,
+            "Category": "Fantasy",
+            "Rental": 5.99,
+            "Purchase": 10.99,
+            "Stars": 5,
+            "Classification": "12A",
+            "Country": "GB"
+        },
+        {
+            "Title": "Les Miserables",
+            "Year": 1980,
+            "Category": "Drama",
+            "Rental": 0.0,
+            "Purchase": 0.0,
+            "Stars": 2,
+            "Classification": "15",
+            "Country": "FR"
+        },
+        {
+            "Title": "Diva",
+            "Year": 1980,
+            "Category": "Drama",
+            "Rental": 12.99,
+            "Purchase": 15.99,
+            "Stars": 5,
+            "Classification": "15",
+            "Country": "FR"
+        },
+        {
+            "Title": "Jurassic World",
+            "Year": 2022,
+            "Category": "Science Fiction",
+            "Rental": 9.99,
+            "Purchase": 14.99,
+            "Stars": 5,
+            "Classification": "12A",
+            "Country": "USA"
         }
     ]
 }

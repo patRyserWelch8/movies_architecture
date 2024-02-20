@@ -8,19 +8,19 @@ from streamers_connection.peartv import PearTV
 
 
 
-oduflix_schema_path = "..//data//ODUFlix//schema.json"
-oduflix_data_path = "..//data//ODUFlix//data.json"
-oduflix_entry_schema = "..//data//ODUFlix//schema_entry.json"
+oduflix_schema_path = "../primary_data//ODUFlix//schema.json"
+oduflix_data_path = "../primary_data//ODUFlix//data.json"
+oduflix_entry_schema = "..//primary_data//ODUFlix//schema_entry.json"
 
-bf_schema_path = "..//data//BigForest//schema.json"
-bf_entry_schema_path = "..//data//BigForest//schema_entry.json"
-bf_data_path = "..//data//BigForest//data.json"
+bf_schema_path = "../primary_data//BigForest//schema.json"
+bf_entry_schema_path = "../primary_data//BigForest//schema_entry.json"
+bf_data_path = "../primary_data//BigForest//data.json"
 
-cdd_schema_path = "/Users/patryser-welch/Documents/github/movies_architecture/poc/data/CCD/schema.csv"
-cdd_data_path = "/Users/patryser-welch/Documents/github/movies_architecture/poc/data/CCD/data.csv"
+cdd_schema_path = "/primary_data/CCD/schema.csv"
+cdd_data_path = "/primary_data/CCD/data.csv"
 
-peartv_schema_path = "/Users/patryser-welch/Documents/github/movies_architecture/poc/data/PearTV/ddl.sql"
-peartv_data_path = "/Users/patryser-welch/Documents/github/movies_architecture/poc/data/PearTV/movies.db"
+peartv_schema_path = "/primary_data/PearTV/ddl.sql"
+peartv_data_path = "/primary_data/PearTV/movies.db"
 
 
 oduflix_movies: streamers_connection.odufilx.OduFlixStore = streamers_connection.odufilx.OduFlixStore(oduflix_schema_path,

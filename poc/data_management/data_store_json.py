@@ -1,6 +1,8 @@
 import os
 
 import jsonschema
+import pandas as pd
+
 from data_management.data_store import DataStore
 import json
 from jsonschema import validate
@@ -16,8 +18,9 @@ class DataStoreJSON(DataStore):
         self.entry_schema: json = None
         self.entries : list = []
         self.root : str  = None
+        self.data_df : pd.DataFrame = None
 
-        # path to location of data
+        # path to location of primary_data
         self.entry_schema_path : str = entry_schema_path
         self.schema_path       : str = schema_path
         self.data_path         : str = data_path
@@ -42,15 +45,18 @@ class DataStoreJSON(DataStore):
 
     def upload_data(self) -> None:
         self.data               = self._retrieve_json(self.data_path)
-        self.root               = list(self.data.keys())[0]
-        self.entries            = self.data[self.root]
-
-
+        print(self.data_path)
+        print(self.data.keys())
+        if self.data.keys() is None:
+            self.root = None
+            self.entries = {}
+        else:
+            self.root = list(self.data.keys())[0]
+            self.entries = self.data[self.root]
 
     def capture(self, entry: str) -> None:
         super().capture(entry)
         self.entry_json    = json.loads(entry)
-
 
     def _validate_data(self) -> bool:
         try:
@@ -81,3 +87,10 @@ class DataStoreJSON(DataStore):
 
     def print_data(self):
         print(json.dumps(self.data, indent=2))
+
+    def upload_data_dataframe(self) -> None:
+        self.upload_data()
+        self.data_df = pd.DataFrame.from_dict(self.data[self.root])
+
+
+
