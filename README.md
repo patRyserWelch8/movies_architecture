@@ -42,5 +42,28 @@ This folder holds all the data.  Table 1 summarises the data, its type of storag
 
 
 
+ ## Connections
+__Link to the code:__ (Connection to the data)[https://github.com/patRyserWelch8/movies_architecture/tree/main/poc/streamers_connection] and
+[https://github.com/patRyserWelch8/movies_architecture/tree/main/poc/streamers_connection]
+
+This code provides the tools that connects to the various type of storages. Use of existing connections and connectors to data storage is encouraged. In this proof of concept, each streamer inherits on of the classes to manage the data; JSON, CSV, SQL.  The data management simulates the following functionalities:
+
+1. upload data and metadata (schemas)
+2. Capture data before insert to storage
+3. Validate data captured before inserting into the storage
+4. Insert physically to the storage
+5. Confirm insert to the storage
+
+
+
+
+
+
+
+
+ 
+
+
+
 
 
