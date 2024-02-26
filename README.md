@@ -42,7 +42,7 @@ This folder holds all the data.  Table 1 summarises the data, its type of storag
 
 
 
- ## Connections
+ ## Connections to each streamer data 
 __Link to the code:__ (Connection to the data)[https://github.com/patRyserWelch8/movies_architecture/tree/main/poc/streamers_connection] and
 [https://github.com/patRyserWelch8/movies_architecture/tree/main/poc/streamers_connection]
 
@@ -53,6 +53,18 @@ This code provides the tools that connects to the various type of storages. Use 
 3. Validate data captured before inserting into the storage
 4. Insert physically to the storage
 5. Confirm insert to the storage
+
+New type of data management can be added or removed without impacting on the above layers, if well managed. 
+
+## Integrating all the streamsers
+
+__link to the code:__ (The streamer layer)[https://github.com/patRyserWelch8/movies_architecture/tree/main/poc/integration_streamers]
+
+This layer brings some transparency to the front end and remote integration.  Those components interacts with the layer so that data is captured. Therefore, a bespoke UI and a bespoke streamer storage can be added and use again existing code. 
+
+
+
+
 
 
 
