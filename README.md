@@ -49,16 +49,18 @@ __Link to the code:__ (Connection to the data)[https://github.com/patRyserWelch8
 This code provides the tools that connects to the various type of storages. Use of existing connections and connectors to data storage is encouraged. In this proof of concept, each streamer inherits on of the classes to manage the data; JSON, CSV, SQL.  The data management simulates the following functionalities:
 
 1. upload data and metadata (schemas)
-2. Capture data before insert to storage
-3. Validate data captured before inserting into the storage
-4. Insert physically to the storage
-5. Confirm insert to the storage
+2. upload data into a dataframe for data analysis and consumption
+3. Capture data before insert to storage
+4. Validate data captured before inserting into the storage
+5. Insert physically to the storage
+6. Confirm insert to the storage
 
 New type of data management can be added or removed without impacting on the above layers, if well managed. 
 
 ## Integrating all the streamsers
 
 __link to the code:__ (The streamer layer)[https://github.com/patRyserWelch8/movies_architecture/tree/main/poc/integration_streamers]
+
 
 This layer brings some transparency to the front end and remote integration.  Those components interacts with the layer so that data is captured. Therefore, a bespoke UI and a bespoke streamer storage can be added and use again existing code. 
 
@@ -86,7 +88,30 @@ __Secondary data:__ (Secondary data)[https://github.com/patRyserWelch8/movies_ar
 
 The script aims at show how some simple map-and-reduce grouping could be completed. 
 
-##
+## Data pipeline
+
+## Integrating all the streamsers
+
+__link to the code:__ (The streamer layer)[https://github.com/patRyserWelch8/movies_architecture/tree/main/poc/integration_streamers]
+
+
+This layer implement an ETL data pipeline. This layer ingest the data from each data source, transformand and upload using a set of columns. Some data harmonisation occurs so that all the streamers data are integrated in one dataset.  The columns of the secondary data are the following: 
+
+- 'Streamer'
+- 'Title'
+- 'Classification'
+- 'Country'
+- 'Year'
+- 'Rental'
+- 'Purchase'
+- 'Stars'
+
+The data is ingested into dataframe using the upload data functionality provided by each streamer. The ingested data is transformed for each streamer, before being concatenated and stored as secondary storage. A csv in our case, for simplicity.
+
+
+
+
+
 
 
 
