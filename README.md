@@ -20,7 +20,7 @@ The user interaction is a basic command line interface. A flow is hard coded to 
 ## Remote capture through integration of system
 __link to the code:__ [remote integration with other systems]https://github.com/patRyserWelch8/movies_architecture/tree/main/poc/remote_interaction)
 
-__remote storage:__ [Remote datastorage](https://github.com/patRyserWelch8/movies_architecture/tree/main/poc/remote_data)
+__remote storage:__ [Remote data storage](https://github.com/patRyserWelch8/movies_architecture/tree/main/poc/remote_data)
 
 Some movies are pushed from another system. We simulate this scenario using some files. A flow redirects the data to unique streamers.  In this case we push data forward to BigForest and and PearTV.
 
