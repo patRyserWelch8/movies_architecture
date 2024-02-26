@@ -36,7 +36,9 @@ This folder holds all the data.  Table 1 summarises the data, its type of storag
 | :---| :--- | :--- |
 | CCD | Comma-Separated-Values | Title (String), TypeOfProgram (String), Classification (String), Country(String), Year (int), Category (String), Channel (string) 
 | Oduflix | JSON | Title (String), Producer (String), Year (int), Country(String), Classification (String), Stars (int), Actors (Arrays of String)|
-| BigForest| JSON | Title (String), Year (int),  Category (String),  Rental (float), Purchase (float), stars (int), Classification (String), Country(String|
+| BigForest| JSON | Title (String), Year (int),  Category (String),  Rental (float), Purchase (float), stars (int), Classification (String), Country(String)|
+| PearTV| SQL (sqlite)| CREATE TABLE Film ( film_id INTEGER PRIMARY KEY, title TEXT NOT NULL, classification TEXT NOT NULL, country TEXT NOT NULL,
+ rental FLOAT NOT NULL, purchase FLOAT NOT NULL, stars INT NOT NULL, year INT  NOT NULL);|
 
 
 
