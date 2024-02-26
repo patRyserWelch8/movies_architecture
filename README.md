@@ -68,10 +68,28 @@ __link to the code:__ (Integration)[https://github.com/patRyserWelch8/movies_arc
 
 This type integrations would be completed through REST-API call and potentially other methods of integrating the user interaction to the back-end.  The class _communicate_ aims at capturing remotetly data as well as through the user interaction.
 
+This component can be extended to develop search facilities. The latter would continue to make some calls through the _integrating all the streamers_ component.
+
 
 # Data consumption
 
-The data consumption that the data is likely to be consumed. Rather than bringing the computation to the data - as demonstrated in (SAFEST)[https://www.longdom.org/open-access-pdfs/safest-a-safeguarding-analytical-framework-for-decentralised-sensitive-data.pdf] and (DataShield)[https://www.datashield.org/], we adopt a Extract-Transform-Load approach.  
+The data consumption is concerned about transforming data into knowledge and decision making. We would hope to apply some statistical methodologies and machine learning techniques for classification and predictions.  
+
+We adopt a Extract-Transform-Load approach. The data is transformed and loaded into a secondary storage. Alternatives, bring the computation to the data - as demonstrated in (SAFEST)[https://www.longdom.org/open-access-pdfs/safest-a-safeguarding-analytical-framework-for-decentralised-sensitive-data.pdf] and (DataShield)[https://www.datashield.org/]. 
+
+We approach data consumption from top to bottom
+
+## Dashboard
+__Link to the script__ : (Dashboard)[https://github.com/patRyserWelch8/movies_architecture/tree/main/poc/dashboard]
+
+__Secondary data:__ (Secondary data)[https://github.com/patRyserWelch8/movies_architecture/tree/main/poc/secondary_data)
+
+The script aims at show how some simple map-and-reduce grouping could be completed. 
+
+##
+
+
+
 
 
 
