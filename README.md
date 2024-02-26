@@ -88,7 +88,7 @@ __Secondary data:__ (Secondary data)[https://github.com/patRyserWelch8/movies_ar
 
 The script aims at show how some simple map-and-reduce grouping could be completed. 
 
-## Data pipeline
+# Data pipeline
 
 ## Integrating all the streamsers
 
