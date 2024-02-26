@@ -15,7 +15,7 @@ We start from the User interaction and moving down to each type of movies and pr
 ## Front end: User Interaction 
 __Link to the code :__ [User interaction](https://github.com/patRyserWelch8/movies_architecture/tree/main/poc)
 
-The user interaction is a basic command line interface. A flow is hard coded to capture data specific for each streamers based on their onw unique data needs. 
+The user interaction is a basic command line interface. A flow is hard coded to capture data specific for each streamers based on their onw unique data needs. It would be anticipated an graphical user interface based on web or mobile technologies could be implemented instead. 
 
 ## Remote capture through integration of system
 __link to the code:__ [remote integration with other systems]https://github.com/patRyserWelch8/movies_architecture/tree/main/poc/remote_interaction)
