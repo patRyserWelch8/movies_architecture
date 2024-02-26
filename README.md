@@ -63,6 +63,10 @@ __link to the code:__ (The streamer layer)[https://github.com/patRyserWelch8/mov
 This layer brings some transparency to the front end and remote integration.  Those components interacts with the layer so that data is captured. Therefore, a bespoke UI and a bespoke streamer storage can be added and use again existing code. 
 
 
+#  Integrating the front and the back end
+__link to the code:__ (Integration)[https://github.com/patRyserWelch8/movies_architecture/tree/main/poc/front_back_integration]
+
+This type integrations would be completed through REST-API call and potentially other methods of integrating the user interaction to the back-end.  The class _communicate_ aims at capturing remotetly data as well as through the user interaction.
 
 
 
