@@ -9,6 +9,22 @@ We simulate using four streamers
 3. BigForest - An international streaming services based on rental and purchase for each movie.
 4. PearTV - Another international streaming services based on rental and purchase for each movie.
 
+# What problems are we aiming to solve?
+##  How can I capture data from various streamers and meeting their unique data needs?
+The data for each streamer varies greatly in term of schema and data storage. This is immutable. We may wish to capture data from other streamer in the future - we are not aware of their schema, and data storage.
+
+##  How can I capture movies, series and programmes in an seamless manner?
+Capturing data for each streamer should be transparent for my friends and myself. We are not interested in using several systems. 
+
+##  How can I capture data about movies and other programmes without a user interaction?
+Capturing data for BigForest and PearTV can pushed in to the system on a daily basis. Therefore, no user interaction is required. 
+
+##  How can I analyse the movies and other data as a whole?
+It would be itneresting  to analyse the data about movies and other programmes.  We would aim to apply some advanced statistical methodologies, ML techniques and visualisation. It would help to transform data into knowledge and wisdom for our movies consumption within our community. 
+
+
+
+
 #  Data capture 
 We start from the User interaction and moving down to each type of movies and programmes streamers.
 
